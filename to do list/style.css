@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #560a4c;
+}
+
+.todo-container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1)
+}
+h1{
+    text-align: center;
+    color: rgb(10, 170, 167);
+    margin-bottom: 20%;
+    font-size: 2em;
+    animation:fadeIn 1.2s ease-in;
+
+}
+ul.todo-list{
+    list-style-type: none;
+}
+ul.todo-list li{
+    padding: 10px 0;
+    border-bottom: 1px solid #f05A7E;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+ul.to-list li:hover{
+    background-color: darksalmon;
+}
+ul.todo-list li:last-child{
+    border-bottom: none;
+}
+input[type="checkbox"]{
+    margin-right: 10px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:hover{
+transform: scale(1.1);
+}
+
+label{
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+input[type="checkbox"]:checked+label {
+ text-decoration: line-through;
+ color: rgb(18, 20, 19);
+ transition: text-decoration 0.3s, color 0.3s  ease-in;
+ animation: fadeout 0.3s ease-out;
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
